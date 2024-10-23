@@ -4,6 +4,8 @@ interface PokemonCard {
 }
 
 function PokemonCard({ pokemon }) {
+  console.log(pokemon);
+
   return (
     <figure>
       {pokemon.imgSrc ? (
