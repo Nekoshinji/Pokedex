@@ -7,7 +7,7 @@ function App() {
       <PokemonCard pokemon={pokemonList[0]} />
     </div>
   );
-};
+}
 
 const pokemonList = [
   {
