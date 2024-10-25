@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <PokemonCard imgSrc={pokemonList[pokemonIndex].imgSrc} name={pokemonList[pokemonIndex].name} />
       <NavBar
         pokemonIndex={pokemonIndex}
         setPokemonIndex={setPokemonIndex}
