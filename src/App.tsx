@@ -6,7 +6,7 @@ function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <PokemonCard imgSrc={pokemonList[pokemonIndex].imgSrc} name={pokemonList[pokemonIndex].name} />
       <button
         type="button"
         onClick={() => setPokemonIndex(pokemonIndex > 0 ? pokemonIndex - 1 : 0)}
