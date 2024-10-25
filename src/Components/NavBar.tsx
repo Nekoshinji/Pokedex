@@ -9,7 +9,7 @@ interface NavBarProps {
   pokemonList: Pokemon[];
 }
 
-const NavBar: React.FC<NavBarProps> = ({ pokemonIndex, setPokemonIndex, pokemonList }) => {
+const NavBar = ({ pokemonIndex, setPokemonIndex, pokemonList }:NavBarProps) => {
 
   return (
     <div>
