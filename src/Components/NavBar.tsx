@@ -1,4 +1,4 @@
-interface Pokemon {
+interface pokelistProps {
   name: string;
   imgSrc?: string;
 }
@@ -6,30 +6,21 @@ interface Pokemon {
 interface NavBarProps {
   pokemonIndex: number;
   setPokemonIndex: (index: number) => void;
-  pokemonList: Pokemon[];
+  pokemonList: pokelistProps[];
 }
 
-const NavBar: React.FC<NavBarProps> = ({ pokemonIndex, setPokemonIndex, pokemonList }) => {
-
+const NavBar = ({ setPokemonIndex, pokemonList }: NavBarProps) => {
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => setPokemonIndex(pokemonIndex > 0 ? pokemonIndex - 1 : 0)}
-        disabled={pokemonIndex === 0}
-      >
-        Précédent
-      </button>
-      <button
-        type="button"
-        onClick={() => setPokemonIndex(pokemonIndex < pokemonList.length - 1 ? pokemonIndex + 1 : pokemonList.length - 1)}
-        disabled={pokemonIndex === pokemonList.length - 1}
-      >
-        Suivant
-      </button>
+      {pokemonList.map((pokemon, id) => (
+        <button type="button" key={pokemon.name} onClick={() => setPokemonIndex(id)}>
+          <h2>
+            {pokemon.name}
+          </h2>
+        </button>
+      ))}
     </div>
   );
 };
 
 export default NavBar;
-
